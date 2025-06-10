@@ -22,7 +22,8 @@
 ## Project Requirements
 
 - Condition
-  - Create a new project in the current folder
+  - Make all steps for create a new  project init inside a single bash script with all the steps required to create the project
+  - Pls create the project inside a new folder of the home directory  logged in user
   - Create a single bash script with all the steps required to create the project
   - Iteratively check all output of the script and fix all errors
   - Iteratively check and delete all output of the project
