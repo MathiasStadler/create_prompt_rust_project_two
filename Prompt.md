@@ -1,8 +1,6 @@
 # Task: Create a Command-Line String Uppercase Converter in Rust
 
-## Project Requirements
-
-### Core Functionality
+## Core Functionality
 
 1. Create a command-line application in Rust that:
    - Accepts string input from users
@@ -21,20 +19,7 @@
    - Use `clap` for CLI argument parsing
    - Implement error handling with `anyhow` and `thiserror`# create prompt rust project
 
-## prompt
-
-Generate a rust project with follow properties:
-
-## Environment Setup
-
-Create a program with the following function and observe the following conditions
-
-- Function
-  
-  The program is to be started on the command line
-  be started and request a character string as input and
-  output this in capital letters on the command line.
-  The program should then be terminated. The return value of the BASH command of the program should then be output
+## Project Requirements
 
 - Condition
   - Create a new project in the current folder
