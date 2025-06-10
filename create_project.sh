@@ -18,8 +18,6 @@ PROJECT_PATH="$HOME_DIR/$PROJECT_NAME"
 # Function to check for required tools
 check_requirements() {
     local missing_tools=()
-    
-    # Check for required commands
     for cmd in cargo rustc git; do
         if ! command -v $cmd &> /dev/null; then
             missing_tools+=($cmd)
@@ -30,43 +28,38 @@ check_requirements() {
         echo -e "${RED}Error: Missing required tools: ${missing_tools[*]}${NC}"
         exit 1
     fi
+    
+    # Install coverage tools if needed
+    cargo install cargo-llvm-cov || true
 }
 
-# Function to safely handle existing project directory
+# Function to handle existing project
 handle_existing_project() {
     if [ -d "$PROJECT_PATH" ]; then
-        echo -e "${YELLOW}Warning: Project directory already exists at: $PROJECT_PATH${NC}"
-        read -p "Do you want to remove it and continue? (y/n) " -n 1 -r
-        echo    # Move to a new line
+        echo -e "${YELLOW}Warning: Project directory exists at: $PROJECT_PATH${NC}"
+        read -p "Remove and continue? (y/n) " -n 1 -r
+        echo
         if [[ $REPLY =~ ^[Yy]$ ]]; then
-            echo -e "${YELLOW}Removing existing project directory...${NC}"
             rm -rf "$PROJECT_PATH"
-            return 0
         else
-            echo -e "${RED}Aborting script...${NC}"
             exit 1
         fi
     fi
 }
 
-# Main setup function
+# Main function
 main() {
     echo -e "${GREEN}Starting project setup...${NC}"
     
-    # Check requirements first
     check_requirements
-    
-    # Handle existing project
     handle_existing_project
     
-    echo -e "${GREEN}Setting up project in: $PROJECT_PATH${NC}"
-
     # Create new project
     cargo new "$PROJECT_PATH"
     cd "$PROJECT_PATH"
 
     # Create project structure
-    mkdir -p src/{utils,tests} docs
+    mkdir -p src/{utils,tests} docs .vscode
 
     # Write Cargo.toml
     cat > Cargo.toml << 'EOL'
@@ -74,8 +67,6 @@ main() {
 name = "uppercase-converter"
 version = "0.1.0"
 edition = "2021"
-authors = ["Your Name <your.email@example.com>"]
-description = "A command-line tool to convert strings to uppercase"
 
 [dependencies]
 clap = { version = "4.4", features = ["derive"] }
@@ -85,6 +76,10 @@ anyhow = "1.0"
 [dev-dependencies]
 assert_cmd = "2.0"
 predicates = "3.0"
+
+[profile.coverage]
+inherits = "test"
+debug = true
 EOL
 
     # Write lib.rs
@@ -97,9 +92,7 @@ use crate::error::UppercaseError;
 pub struct Converter;
 
 impl Converter {
-    pub fn new() -> Self {
-        Converter
-    }
+    pub fn new() -> Self { Self }
 
     pub fn convert_to_uppercase(&self, input: &str) -> Result<String, UppercaseError> {
         if input.is_empty() {
@@ -127,6 +120,17 @@ mod tests {
 }
 EOL
 
+    # Write error.rs
+    cat > src/error.rs << 'EOL'
+use thiserror::Error;
+
+#[derive(Error, Debug)]
+pub enum UppercaseError {
+    #[error("Input string cannot be empty")]
+    EmptyInput,
+}
+EOL
+
     # Write main.rs
     cat > src/main.rs << 'EOL'
 use clap::{Command, Arg};
@@ -136,14 +140,8 @@ use uppercase_converter::Converter;
 fn main() {
     let matches = Command::new("Uppercase Converter")
         .version("1.0")
-        .author("Your Name <your.email@example.com>")
         .about("Converts input strings to uppercase")
-        .arg(
-            Arg::new("input")
-                .help("The string to convert to uppercase")
-                .required(true)
-                .index(1),
-        )
+        .arg(Arg::new("input").required(true).index(1))
         .get_matches();
 
     let input = matches.get_one::<String>("input").unwrap();
@@ -159,32 +157,36 @@ fn main() {
 }
 EOL
 
-    # Write error.rs
-    cat > src/error.rs << 'EOL'
-use thiserror::Error;
-
-#[derive(Error, Debug)]
-pub enum UppercaseError {
-    #[error("Input string cannot be empty")]
-    EmptyInput,
+    # Write VS Code settings
+    cat > .vscode/settings.json << 'EOL'
+{
+    "rust-analyzer.checkOnSave.command": "clippy",
+    "coverage-gutters.lcovname": "target/llvm-cov/lcov.info",
+    "coverage-gutters.showLineCoverage": true,
+    "coverage-gutters.showRulerCoverage": true
 }
 EOL
 
-    # Create README
+    # Write README with coverage info
     cat > README.md << "EOL"
 # Uppercase Converter
 
 A command-line tool to convert strings to uppercase.
 
 ## Usage
-\`\`\`bash
+```bash
 cargo run -- "your text here"
-\`\`\`
+```
 
-## Features
-- Converts text to uppercase
-- Command-line interface
-- Error handling
+## Coverage Reports
+Reports are available at:
+- HTML: target/llvm-cov/html/index.html
+- LCOV: target/llvm-cov/lcov.info
+
+### VS Code Integration
+1. Install 'Coverage Gutters' extension
+2. Press Ctrl+Shift+P
+3. Run 'Coverage Gutters: Watch'
 EOL
 
     # Initialize git repository
@@ -192,14 +194,17 @@ EOL
     git add .
     git commit -m "Initial commit"
 
-    # Format and test
-    cargo fmt
-    cargo build
-    cargo test
+    # Generate coverage reports
+    cargo llvm-cov --html
+    cargo llvm-cov --lcov --output-path target/llvm-cov/lcov.info
 
     echo -e "${GREEN}Project setup complete!${NC}"
-    echo -e "${GREEN}Try: cargo run -- \"hello world\"${NC}"
+    echo -e "${GREEN}Coverage report: $PROJECT_PATH/target/llvm-cov/html/index.html${NC}"
+    echo -e "${GREEN}Run: cargo run -- \"hello world\"${NC}"
 }
 
-# Run the main function
+# Execute main function
 main
+
+# chmod +x create_project.sh
+# ./create_project.sh
