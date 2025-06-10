@@ -1,0 +1,1067 @@
+
+Analyse tzhe local file Prompt.md and create
+
+---
+
+
+Ploease run the programm reviiew the output and fix all errors, markdown files too
+
+---
+
+
+Pls fix => cargo build
+cargo test
+error: could not find `Cargo.toml` in `/home/trapapa/create_prompt_rust_project_two` or any parent directory
+error: could not find `Cargo.toml` in `/home/trapapa/create_prompt_rust_project_two` or any parent directory
+
+---
+
+
+Pls craete the project inside a new folder of the home directory  logged in user 
+
+---
+
+
+Pls make all staeps inside ONE script
+
+---
+
+
+Ps fix =>  [{
+	"resource": "/home/trapapa/create_prompt_rust_project_two/uppercase-converter/src/main.rs",
+	"owner": "rust-analyzer",
+	"code": {
+		"value": "syntax-error",
+		"target": {
+			"$mid": 1,
+			"path": "/stable/reference/",
+			"scheme": "https",
+			"authority": "doc.rust-lang.org"
+		}
+	},
+	"severity": 8,
+	"message": "Syntax Error: expected an item",
+	"source": "rust-analyzer",
+	"startLineNumber": 2,
+	"startColumn": 20,
+	"endLineNumber": 2,
+	"endColumn": 20
+},{
+	"resource": "/home/trapapa/create_prompt_rust_project_two/uppercase-converter/src/main.rs",
+	"owner": "rust-analyzer",
+	"code": {
+		"value": "syntax-error",
+		"target": {
+			"$mid": 1,
+			"path": "/stable/reference/",
+			"scheme": "https",
+			"authority": "doc.rust-lang.org"
+		}
+	},
+	"severity": 8,
+	"message": "Syntax Error: expected an item",
+	"source": "rust-analyzer",
+	"startLineNumber": 2,
+	"startColumn": 20,
+	"endLineNumber": 2,
+	"endColumn": 20
+},{
+	"resource": "/home/trapapa/create_prompt_rust_project_two/uppercase-converter/src/main.rs",
+	"owner": "rust-analyzer",
+	"code": {
+		"value": "syntax-error",
+		"target": {
+			"$mid": 1,
+			"path": "/stable/reference/",
+			"scheme": "https",
+			"authority": "doc.rust-lang.org"
+		}
+	},
+	"severity": 8,
+	"message": "Syntax Error: expected `{`, `[`, `(`",
+	"source": "rust-analyzer",
+	"startLineNumber": 2,
+	"startColumn": 28,
+	"endLineNumber": 2,
+	"endColumn": 28
+},{
+	"resource": "/home/trapapa/create_prompt_rust_project_two/uppercase-converter/src/main.rs",
+	"owner": "rust-analyzer",
+	"code": {
+		"value": "syntax-error",
+		"target": {
+			"$mid": 1,
+			"path": "/stable/reference/",
+			"scheme": "https",
+			"authority": "doc.rust-lang.org"
+		}
+	},
+	"severity": 8,
+	"message": "Syntax Error: expected SEMICOLON",
+	"source": "rust-analyzer",
+	"startLineNumber": 2,
+	"startColumn": 28,
+	"endLineNumber": 2,
+	"endColumn": 28
+},{
+	"resource": "/home/trapapa/create_prompt_rust_project_two/uppercase-converter/src/main.rs",
+	"owner": "rust-analyzer",
+	"code": {
+		"value": "syntax-error",
+		"target": {
+			"$mid": 1,
+			"path": "/stable/reference/",
+			"scheme": "https",
+			"authority": "doc.rust-lang.org"
+		}
+	},
+	"severity": 8,
+	"message": "Syntax Error: expected an item",
+	"source": "rust-analyzer",
+	"startLineNumber": 2,
+	"startColumn": 28,
+	"endLineNumber": 2,
+	"endColumn": 28
+},{
+	"resource": "/home/trapapa/create_prompt_rust_project_two/uppercase-converter/src/main.rs",
+	"owner": "rust-analyzer",
+	"code": {
+		"value": "syntax-error",
+		"target": {
+			"$mid": 1,
+			"path": "/stable/reference/",
+			"scheme": "https",
+			"authority": "doc.rust-lang.org"
+		}
+	},
+	"severity": 8,
+	"message": "Syntax Error: unknown literal prefix",
+	"source": "rust-analyzer",
+	"startLineNumber": 4,
+	"startColumn": 72,
+	"endLineNumber": 4,
+	"endColumn": 81
+},{
+	"resource": "/home/trapapa/create_prompt_rust_project_two/uppercase-converter/src/main.rs",
+	"owner": "rustc",
+	"code": {
+		"value": "Click for full compiler diagnostic",
+		"target": {
+			"$mid": 1,
+			"path": "/diagnostic message [0]",
+			"scheme": "rust-analyzer-diagnostics-view",
+			"query": "0",
+			"fragment": "file:///home/trapapa/create_prompt_rust_project_two/uppercase-converter/src/main.rs"
+		}
+	},
+	"severity": 8,
+	"message": "prefix `Converter` is unknown\nprefixed identifiers and literals are reserved since Rust 2021",
+	"source": "rustc",
+	"startLineNumber": 4,
+	"startColumn": 72,
+	"endLineNumber": 4,
+	"endColumn": 81,
+	"relatedInformation": [
+		{
+			"startLineNumber": 4,
+			"startColumn": 81,
+			"endLineNumber": 4,
+			"endColumn": 81,
+			"message": "consider inserting whitespace here: ` `",
+			"resource": "/home/trapapa/create_prompt_rust_project_two/uppercase-converter/src/main.rs"
+		}
+	]
+},{
+	"resource": "/home/trapapa/create_prompt_rust_project_two/uppercase-converter/src/main.rs",
+	"owner": "rust-analyzer",
+	"code": {
+		"value": "syntax-error",
+		"target": {
+			"$mid": 1,
+			"path": "/stable/reference/",
+			"scheme": "https",
+			"authority": "doc.rust-lang.org"
+		}
+	},
+	"severity": 8,
+	"message": "Syntax Error: expected an item",
+	"source": "rust-analyzer",
+	"startLineNumber": 4,
+	"startColumn": 81,
+	"endLineNumber": 4,
+	"endColumn": 81
+},{
+	"resource": "/home/trapapa/create_prompt_rust_project_two/uppercase-converter/src/main.rs",
+	"owner": "rust-analyzer",
+	"code": {
+		"value": "syntax-error",
+		"target": {
+			"$mid": 1,
+			"path": "/stable/reference/",
+			"scheme": "https",
+			"authority": "doc.rust-lang.org"
+		}
+	},
+	"severity": 8,
+	"message": "Syntax Error: expected an item",
+	"source": "rust-analyzer",
+	"startLineNumber": 4,
+	"startColumn": 81,
+	"endLineNumber": 4,
+	"endColumn": 81
+},{
+	"resource": "/home/trapapa/create_prompt_rust_project_two/uppercase-converter/src/main.rs",
+	"owner": "rust-analyzer",
+	"code": {
+		"value": "syntax-error",
+		"target": {
+			"$mid": 1,
+			"path": "/stable/reference/",
+			"scheme": "https",
+			"authority": "doc.rust-lang.org"
+		}
+	},
+	"severity": 8,
+	"message": "Syntax Error: expected an item",
+	"source": "rust-analyzer",
+	"startLineNumber": 4,
+	"startColumn": 101,
+	"endLineNumber": 4,
+	"endColumn": 101
+},{
+	"resource": "/home/trapapa/create_prompt_rust_project_two/uppercase-converter/src/main.rs",
+	"owner": "rust-analyzer",
+	"code": {
+		"value": "syntax-error",
+		"target": {
+			"$mid": 1,
+			"path": "/stable/reference/",
+			"scheme": "https",
+			"authority": "doc.rust-lang.org"
+		}
+	},
+	"severity": 8,
+	"message": "Syntax Error: expected an item",
+	"source": "rust-analyzer",
+	"startLineNumber": 4,
+	"startColumn": 104,
+	"endLineNumber": 4,
+	"endColumn": 104
+},{
+	"resource": "/home/trapapa/create_prompt_rust_project_two/uppercase-converter/src/main.rs",
+	"owner": "rust-analyzer",
+	"code": {
+		"value": "syntax-error",
+		"target": {
+			"$mid": 1,
+			"path": "/stable/reference/",
+			"scheme": "https",
+			"authority": "doc.rust-lang.org"
+		}
+	},
+	"severity": 8,
+	"message": "Syntax Error: expected an item",
+	"source": "rust-analyzer",
+	"startLineNumber": 4,
+	"startColumn": 132,
+	"endLineNumber": 4,
+	"endColumn": 132
+},{
+	"resource": "/home/trapapa/create_prompt_rust_project_two/uppercase-converter/src/main.rs",
+	"owner": "rust-analyzer",
+	"code": {
+		"value": "syntax-error",
+		"target": {
+			"$mid": 1,
+			"path": "/stable/reference/",
+			"scheme": "https",
+			"authority": "doc.rust-lang.org"
+		}
+	},
+	"severity": 8,
+	"message": "Syntax Error: expected an item",
+	"source": "rust-analyzer",
+	"startLineNumber": 4,
+	"startColumn": 133,
+	"endLineNumber": 4,
+	"endColumn": 133
+},{
+	"resource": "/home/trapapa/create_prompt_rust_project_two/uppercase-converter/src/main.rs",
+	"owner": "rust-analyzer",
+	"code": {
+		"value": "syntax-error",
+		"target": {
+			"$mid": 1,
+			"path": "/stable/reference/",
+			"scheme": "https",
+			"authority": "doc.rust-lang.org"
+		}
+	},
+	"severity": 8,
+	"message": "Syntax Error: expected an item",
+	"source": "rust-analyzer",
+	"startLineNumber": 4,
+	"startColumn": 138,
+	"endLineNumber": 4,
+	"endColumn": 138
+},{
+	"resource": "/home/trapapa/create_prompt_rust_project_two/uppercase-converter/src/main.rs",
+	"owner": "rust-analyzer",
+	"code": {
+		"value": "syntax-error",
+		"target": {
+			"$mid": 1,
+			"path": "/stable/reference/",
+			"scheme": "https",
+			"authority": "doc.rust-lang.org"
+		}
+	},
+	"severity": 8,
+	"message": "Syntax Error: expected an item",
+	"source": "rust-analyzer",
+	"startLineNumber": 4,
+	"startColumn": 138,
+	"endLineNumber": 4,
+	"endColumn": 138
+},{
+	"resource": "/home/trapapa/create_prompt_rust_project_two/uppercase-converter/src/main.rs",
+	"owner": "rust-analyzer",
+	"code": {
+		"value": "syntax-error",
+		"target": {
+			"$mid": 1,
+			"path": "/stable/reference/",
+			"scheme": "https",
+			"authority": "doc.rust-lang.org"
+		}
+	},
+	"severity": 8,
+	"message": "Syntax Error: expected an item",
+	"source": "rust-analyzer",
+	"startLineNumber": 4,
+	"startColumn": 144,
+	"endLineNumber": 4,
+	"endColumn": 144
+},{
+	"resource": "/home/trapapa/create_prompt_rust_project_two/uppercase-converter/src/main.rs",
+	"owner": "rust-analyzer",
+	"code": {
+		"value": "syntax-error",
+		"target": {
+			"$mid": 1,
+			"path": "/stable/reference/",
+			"scheme": "https",
+			"authority": "doc.rust-lang.org"
+		}
+	},
+	"severity": 8,
+	"message": "Syntax Error: expected an item",
+	"source": "rust-analyzer",
+	"startLineNumber": 4,
+	"startColumn": 144,
+	"endLineNumber": 4,
+	"endColumn": 144
+},{
+	"resource": "/home/trapapa/create_prompt_rust_project_two/uppercase-converter/src/main.rs",
+	"owner": "rust-analyzer",
+	"code": {
+		"value": "syntax-error",
+		"target": {
+			"$mid": 1,
+			"path": "/stable/reference/",
+			"scheme": "https",
+			"authority": "doc.rust-lang.org"
+		}
+	},
+	"severity": 8,
+	"message": "Syntax Error: expected an item",
+	"source": "rust-analyzer",
+	"startLineNumber": 4,
+	"startColumn": 152,
+	"endLineNumber": 4,
+	"endColumn": 152
+},{
+	"resource": "/home/trapapa/create_prompt_rust_project_two/uppercase-converter/src/main.rs",
+	"owner": "rust-analyzer",
+	"code": {
+		"value": "syntax-error",
+		"target": {
+			"$mid": 1,
+			"path": "/stable/reference/",
+			"scheme": "https",
+			"authority": "doc.rust-lang.org"
+		}
+	},
+	"severity": 8,
+	"message": "Syntax Error: expected an item",
+	"source": "rust-analyzer",
+	"startLineNumber": 4,
+	"startColumn": 152,
+	"endLineNumber": 4,
+	"endColumn": 152
+},{
+	"resource": "/home/trapapa/create_prompt_rust_project_two/uppercase-converter/src/main.rs",
+	"owner": "rust-analyzer",
+	"code": {
+		"value": "syntax-error",
+		"target": {
+			"$mid": 1,
+			"path": "/stable/reference/",
+			"scheme": "https",
+			"authority": "doc.rust-lang.org"
+		}
+	},
+	"severity": 8,
+	"message": "Syntax Error: expected an item",
+	"source": "rust-analyzer",
+	"startLineNumber": 4,
+	"startColumn": 156,
+	"endLineNumber": 4,
+	"endColumn": 156
+},{
+	"resource": "/home/trapapa/create_prompt_rust_project_two/uppercase-converter/src/main.rs",
+	"owner": "rust-analyzer",
+	"code": {
+		"value": "syntax-error",
+		"target": {
+			"$mid": 1,
+			"path": "/stable/reference/",
+			"scheme": "https",
+			"authority": "doc.rust-lang.org"
+		}
+	},
+	"severity": 8,
+	"message": "Syntax Error: expected an item",
+	"source": "rust-analyzer",
+	"startLineNumber": 4,
+	"startColumn": 156,
+	"endLineNumber": 4,
+	"endColumn": 156
+},{
+	"resource": "/home/trapapa/create_prompt_rust_project_two/uppercase-converter/src/main.rs",
+	"owner": "rust-analyzer",
+	"code": {
+		"value": "syntax-error",
+		"target": {
+			"$mid": 1,
+			"path": "/stable/reference/",
+			"scheme": "https",
+			"authority": "doc.rust-lang.org"
+		}
+	},
+	"severity": 8,
+	"message": "Syntax Error: expected an item",
+	"source": "rust-analyzer",
+	"startLineNumber": 4,
+	"startColumn": 157,
+	"endLineNumber": 4,
+	"endColumn": 157
+},{
+	"resource": "/home/trapapa/create_prompt_rust_project_two/uppercase-converter/src/main.rs",
+	"owner": "rust-analyzer",
+	"code": {
+		"value": "syntax-error",
+		"target": {
+			"$mid": 1,
+			"path": "/stable/reference/",
+			"scheme": "https",
+			"authority": "doc.rust-lang.org"
+		}
+	},
+	"severity": 8,
+	"message": "Syntax Error: expected an item",
+	"source": "rust-analyzer",
+	"startLineNumber": 4,
+	"startColumn": 189,
+	"endLineNumber": 4,
+	"endColumn": 189
+},{
+	"resource": "/home/trapapa/create_prompt_rust_project_two/uppercase-converter/src/main.rs",
+	"owner": "rust-analyzer",
+	"code": {
+		"value": "syntax-error",
+		"target": {
+			"$mid": 1,
+			"path": "/stable/reference/",
+			"scheme": "https",
+			"authority": "doc.rust-lang.org"
+		}
+	},
+	"severity": 8,
+	"message": "Syntax Error: expected an item",
+	"source": "rust-analyzer",
+	"startLineNumber": 4,
+	"startColumn": 197,
+	"endLineNumber": 4,
+	"endColumn": 197
+},{
+	"resource": "/home/trapapa/create_prompt_rust_project_two/uppercase-converter/src/main.rs",
+	"owner": "rust-analyzer",
+	"code": {
+		"value": "syntax-error",
+		"target": {
+			"$mid": 1,
+			"path": "/stable/reference/",
+			"scheme": "https",
+			"authority": "doc.rust-lang.org"
+		}
+	},
+	"severity": 8,
+	"message": "Syntax Error: expected an item",
+	"source": "rust-analyzer",
+	"startLineNumber": 4,
+	"startColumn": 200,
+	"endLineNumber": 4,
+	"endColumn": 200
+},{
+	"resource": "/home/trapapa/create_prompt_rust_project_two/uppercase-converter/src/main.rs",
+	"owner": "rust-analyzer",
+	"code": {
+		"value": "syntax-error",
+		"target": {
+			"$mid": 1,
+			"path": "/stable/reference/",
+			"scheme": "https",
+			"authority": "doc.rust-lang.org"
+		}
+	},
+	"severity": 8,
+	"message": "Syntax Error: unknown literal prefix",
+	"source": "rust-analyzer",
+	"startLineNumber": 4,
+	"startColumn": 201,
+	"endLineNumber": 4,
+	"endColumn": 210
+},{
+	"resource": "/home/trapapa/create_prompt_rust_project_two/uppercase-converter/src/main.rs",
+	"owner": "rustc",
+	"code": {
+		"value": "Click for full compiler diagnostic",
+		"target": {
+			"$mid": 1,
+			"path": "/diagnostic message [2]",
+			"scheme": "rust-analyzer-diagnostics-view",
+			"query": "2",
+			"fragment": "file:///home/trapapa/create_prompt_rust_project_two/uppercase-converter/src/main.rs"
+		}
+	},
+	"severity": 8,
+	"message": "prefix `uppercase` is unknown\nprefixed identifiers and literals are reserved since Rust 2021",
+	"source": "rustc",
+	"startLineNumber": 4,
+	"startColumn": 201,
+	"endLineNumber": 4,
+	"endColumn": 210,
+	"relatedInformation": [
+		{
+			"startLineNumber": 4,
+			"startColumn": 210,
+			"endLineNumber": 4,
+			"endColumn": 210,
+			"message": "consider inserting whitespace here: ` `",
+			"resource": "/home/trapapa/create_prompt_rust_project_two/uppercase-converter/src/main.rs"
+		}
+	]
+},{
+	"resource": "/home/trapapa/create_prompt_rust_project_two/uppercase-converter/src/main.rs",
+	"owner": "rust-analyzer",
+	"code": {
+		"value": "syntax-error",
+		"target": {
+			"$mid": 1,
+			"path": "/stable/reference/",
+			"scheme": "https",
+			"authority": "doc.rust-lang.org"
+		}
+	},
+	"severity": 8,
+	"message": "Syntax Error: expected an item",
+	"source": "rust-analyzer",
+	"startLineNumber": 4,
+	"startColumn": 210,
+	"endLineNumber": 4,
+	"endColumn": 210
+},{
+	"resource": "/home/trapapa/create_prompt_rust_project_two/uppercase-converter/src/main.rs",
+	"owner": "rust-analyzer",
+	"code": {
+		"value": "syntax-error",
+		"target": {
+			"$mid": 1,
+			"path": "/stable/reference/",
+			"scheme": "https",
+			"authority": "doc.rust-lang.org"
+		}
+	},
+	"severity": 8,
+	"message": "Syntax Error: expected an item",
+	"source": "rust-analyzer",
+	"startLineNumber": 4,
+	"startColumn": 210,
+	"endLineNumber": 4,
+	"endColumn": 210
+},{
+	"resource": "/home/trapapa/create_prompt_rust_project_two/uppercase-converter/src/main.rs",
+	"owner": "rust-analyzer",
+	"code": {
+		"value": "syntax-error",
+		"target": {
+			"$mid": 1,
+			"path": "/stable/reference/",
+			"scheme": "https",
+			"authority": "doc.rust-lang.org"
+		}
+	},
+	"severity": 8,
+	"message": "Syntax Error: expected an item",
+	"source": "rust-analyzer",
+	"startLineNumber": 4,
+	"startColumn": 252,
+	"endLineNumber": 4,
+	"endColumn": 252
+},{
+	"resource": "/home/trapapa/create_prompt_rust_project_two/uppercase-converter/src/main.rs",
+	"owner": "rust-analyzer",
+	"code": {
+		"value": "syntax-error",
+		"target": {
+			"$mid": 1,
+			"path": "/stable/reference/",
+			"scheme": "https",
+			"authority": "doc.rust-lang.org"
+		}
+	},
+	"severity": 8,
+	"message": "Syntax Error: expected an item",
+	"source": "rust-analyzer",
+	"startLineNumber": 4,
+	"startColumn": 287,
+	"endLineNumber": 4,
+	"endColumn": 287
+},{
+	"resource": "/home/trapapa/create_prompt_rust_project_two/uppercase-converter/src/main.rs",
+	"owner": "rust-analyzer",
+	"code": {
+		"value": "syntax-error",
+		"target": {
+			"$mid": 1,
+			"path": "/stable/reference/",
+			"scheme": "https",
+			"authority": "doc.rust-lang.org"
+		}
+	},
+	"severity": 8,
+	"message": "Syntax Error: expected an item",
+	"source": "rust-analyzer",
+	"startLineNumber": 4,
+	"startColumn": 290,
+	"endLineNumber": 4,
+	"endColumn": 290
+},{
+	"resource": "/home/trapapa/create_prompt_rust_project_two/uppercase-converter/src/main.rs",
+	"owner": "rust-analyzer",
+	"code": {
+		"value": "syntax-error",
+		"target": {
+			"$mid": 1,
+			"path": "/stable/reference/",
+			"scheme": "https",
+			"authority": "doc.rust-lang.org"
+		}
+	},
+	"severity": 8,
+	"message": "Syntax Error: expected an item",
+	"source": "rust-analyzer",
+	"startLineNumber": 4,
+	"startColumn": 298,
+	"endLineNumber": 4,
+	"endColumn": 298
+},{
+	"resource": "/home/trapapa/create_prompt_rust_project_two/uppercase-converter/src/main.rs",
+	"owner": "rust-analyzer",
+	"code": {
+		"value": "syntax-error",
+		"target": {
+			"$mid": 1,
+			"path": "/stable/reference/",
+			"scheme": "https",
+			"authority": "doc.rust-lang.org"
+		}
+	},
+	"severity": 8,
+	"message": "Syntax Error: expected an item",
+	"source": "rust-analyzer",
+	"startLineNumber": 4,
+	"startColumn": 301,
+	"endLineNumber": 4,
+	"endColumn": 301
+},{
+	"resource": "/home/trapapa/create_prompt_rust_project_two/uppercase-converter/src/main.rs",
+	"owner": "rust-analyzer",
+	"code": {
+		"value": "syntax-error",
+		"target": {
+			"$mid": 1,
+			"path": "/stable/reference/",
+			"scheme": "https",
+			"authority": "doc.rust-lang.org"
+		}
+	},
+	"severity": 8,
+	"message": "Syntax Error: unknown literal prefix",
+	"source": "rust-analyzer",
+	"startLineNumber": 4,
+	"startColumn": 302,
+	"endLineNumber": 4,
+	"endColumn": 311
+},{
+	"resource": "/home/trapapa/create_prompt_rust_project_two/uppercase-converter/src/main.rs",
+	"owner": "rustc",
+	"code": {
+		"value": "Click for full compiler diagnostic",
+		"target": {
+			"$mid": 1,
+			"path": "/diagnostic message [4]",
+			"scheme": "rust-analyzer-diagnostics-view",
+			"query": "4",
+			"fragment": "file:///home/trapapa/create_prompt_rust_project_two/uppercase-converter/src/main.rs"
+		}
+	},
+	"severity": 8,
+	"message": "prefix `uppercase` is unknown\nprefixed identifiers and literals are reserved since Rust 2021",
+	"source": "rustc",
+	"startLineNumber": 4,
+	"startColumn": 302,
+	"endLineNumber": 4,
+	"endColumn": 311,
+	"relatedInformation": [
+		{
+			"startLineNumber": 4,
+			"startColumn": 311,
+			"endLineNumber": 4,
+			"endColumn": 311,
+			"message": "consider inserting whitespace here: ` `",
+			"resource": "/home/trapapa/create_prompt_rust_project_two/uppercase-converter/src/main.rs"
+		}
+	]
+},{
+	"resource": "/home/trapapa/create_prompt_rust_project_two/uppercase-converter/src/main.rs",
+	"owner": "rust-analyzer",
+	"code": {
+		"value": "syntax-error",
+		"target": {
+			"$mid": 1,
+			"path": "/stable/reference/",
+			"scheme": "https",
+			"authority": "doc.rust-lang.org"
+		}
+	},
+	"severity": 8,
+	"message": "Syntax Error: expected an item",
+	"source": "rust-analyzer",
+	"startLineNumber": 4,
+	"startColumn": 311,
+	"endLineNumber": 4,
+	"endColumn": 311
+},{
+	"resource": "/home/trapapa/create_prompt_rust_project_two/uppercase-converter/src/main.rs",
+	"owner": "rust-analyzer",
+	"code": {
+		"value": "syntax-error",
+		"target": {
+			"$mid": 1,
+			"path": "/stable/reference/",
+			"scheme": "https",
+			"authority": "doc.rust-lang.org"
+		}
+	},
+	"severity": 8,
+	"message": "Syntax Error: expected an item",
+	"source": "rust-analyzer",
+	"startLineNumber": 4,
+	"startColumn": 311,
+	"endLineNumber": 4,
+	"endColumn": 311
+},{
+	"resource": "/home/trapapa/create_prompt_rust_project_two/uppercase-converter/src/main.rs",
+	"owner": "rust-analyzer",
+	"code": {
+		"value": "syntax-error",
+		"target": {
+			"$mid": 1,
+			"path": "/stable/reference/",
+			"scheme": "https",
+			"authority": "doc.rust-lang.org"
+		}
+	},
+	"severity": 8,
+	"message": "Syntax Error: expected an item",
+	"source": "rust-analyzer",
+	"startLineNumber": 4,
+	"startColumn": 450,
+	"endLineNumber": 4,
+	"endColumn": 450
+},{
+	"resource": "/home/trapapa/create_prompt_rust_project_two/uppercase-converter/src/main.rs",
+	"owner": "rust-analyzer",
+	"code": {
+		"value": "syntax-error",
+		"target": {
+			"$mid": 1,
+			"path": "/stable/reference/",
+			"scheme": "https",
+			"authority": "doc.rust-lang.org"
+		}
+	},
+	"severity": 8,
+	"message": "Syntax Error: expected an item",
+	"source": "rust-analyzer",
+	"startLineNumber": 4,
+	"startColumn": 555,
+	"endLineNumber": 4,
+	"endColumn": 555
+},{
+	"resource": "/home/trapapa/create_prompt_rust_project_two/uppercase-converter/src/main.rs",
+	"owner": "rust-analyzer",
+	"code": {
+		"value": "syntax-error",
+		"target": {
+			"$mid": 1,
+			"path": "/stable/reference/",
+			"scheme": "https",
+			"authority": "doc.rust-lang.org"
+		}
+	},
+	"severity": 8,
+	"message": "Syntax Error: expected an item",
+	"source": "rust-analyzer",
+	"startLineNumber": 4,
+	"startColumn": 557,
+	"endLineNumber": 4,
+	"endColumn": 557
+},{
+	"resource": "/home/trapapa/create_prompt_rust_project_two/uppercase-converter/src/main.rs",
+	"owner": "rust-analyzer",
+	"code": {
+		"value": "syntax-error",
+		"target": {
+			"$mid": 1,
+			"path": "/stable/reference/",
+			"scheme": "https",
+			"authority": "doc.rust-lang.org"
+		}
+	},
+	"severity": 8,
+	"message": "Syntax Error: expected an item",
+	"source": "rust-analyzer",
+	"startLineNumber": 4,
+	"startColumn": 624,
+	"endLineNumber": 4,
+	"endColumn": 624
+},{
+	"resource": "/home/trapapa/create_prompt_rust_project_two/uppercase-converter/src/main.rs",
+	"owner": "rust-analyzer",
+	"code": {
+		"value": "syntax-error",
+		"target": {
+			"$mid": 1,
+			"path": "/stable/reference/",
+			"scheme": "https",
+			"authority": "doc.rust-lang.org"
+		}
+	},
+	"severity": 8,
+	"message": "Syntax Error: expected an item",
+	"source": "rust-analyzer",
+	"startLineNumber": 4,
+	"startColumn": 626,
+	"endLineNumber": 4,
+	"endColumn": 626
+},{
+	"resource": "/home/trapapa/create_prompt_rust_project_two/uppercase-converter/src/main.rs",
+	"owner": "rust-analyzer",
+	"code": {
+		"value": "syntax-error",
+		"target": {
+			"$mid": 1,
+			"path": "/stable/reference/",
+			"scheme": "https",
+			"authority": "doc.rust-lang.org"
+		}
+	},
+	"severity": 8,
+	"message": "Syntax Error: expected an item",
+	"source": "rust-analyzer",
+	"startLineNumber": 4,
+	"startColumn": 628,
+	"endLineNumber": 4,
+	"endColumn": 628
+},{
+	"resource": "/home/trapapa/create_prompt_rust_project_two/uppercase-converter/src/main.rs",
+	"owner": "rust-analyzer",
+	"code": {
+		"value": "syntax-error",
+		"target": {
+			"$mid": 1,
+			"path": "/stable/reference/",
+			"scheme": "https",
+			"authority": "doc.rust-lang.org"
+		}
+	},
+	"severity": 8,
+	"message": "Syntax Error: Missing trailing `\"` symbol to terminate the string literal",
+	"source": "rust-analyzer",
+	"startLineNumber": 4,
+	"startColumn": 628,
+	"endLineNumber": 4,
+	"endColumn": 678
+},{
+	"resource": "/home/trapapa/create_prompt_rust_project_two/uppercase-converter/src/main.rs",
+	"owner": "rustc",
+	"code": {
+		"value": "Click for full compiler diagnostic",
+		"target": {
+			"$mid": 1,
+			"path": "/diagnostic message [6]",
+			"scheme": "rust-analyzer-diagnostics-view",
+			"query": "6",
+			"fragment": "file:///home/trapapa/create_prompt_rust_project_two/uppercase-converter/src/main.rs"
+		}
+	},
+	"severity": 8,
+	"message": "unterminated double quote string",
+	"source": "rustc",
+	"startLineNumber": 4,
+	"startColumn": 628,
+	"endLineNumber": 4,
+	"endColumn": 678
+}]
+
+---
+
+
+Pls make all staeps inside ONE script
+
+---
+
+
+Pls make all staeps inside ONE script agsin
+
+---
+
+
+# Task: Create a Command-Line String Uppercase Converter in Rust
+
+## Core Functionality
+
+1. Create a command-line application in Rust that:
+   - Accepts string input from users
+   - Converts the input to uppercase
+   - Displays the result
+
+### Technical Requirements
+
+1. Project Structure:
+   - Create a new project in the current folder
+   - Proper Rust project layout with Cargo
+   - Separate library and binary crates
+   - Organized test directory
+
+2. Dependencies:
+   - Use `clap` for CLI argument parsing
+   - Implement error handling with `anyhow` and `thiserror`# create prompt rust project
+
+## Project Requirements
+
+- Condition
+  - Make all steps for create a new  project init inside ONE script
+  - Pls create the project inside a new folder of the home directory  logged in user
+
+---
+
+
+# Task: Create a Command-Line String Uppercase Converter in Rust
+
+## Core Functionality
+
+1. Create a command-line application in Rust that:
+   - Accepts string input from users
+   - Converts the input to uppercase
+   - Displays the result
+
+### Technical Requirements
+
+1. Project Structure:
+   - Create a new project in the current folder
+   - Proper Rust project layout with Cargo
+   - Separate library and binary crates
+   - Organized test directory
+
+2. Dependencies:
+   - Use `clap` for CLI argument parsing
+   - Implement error handling with `anyhow` and `thiserror`# create prompt rust project
+
+## Project Requirements
+
+- Condition
+  - Make all steps for create a new  project init inside a single bash script with all the steps required to create the project
+  - Pls create the project inside a new folder of the home directory  logged in user
+
+---
+
+
+this programm has follow error => error[E0432]: unresolved import `crate::error`
+ --> src/lib.rs:1:12
+  |
+1 | use crate::error::UppercaseError;
+  |            ^^^^^
+  |            |
+  |            unresolved import
+  |            help: a similar path exists: `clap::error`
+
+For more information about this error, try `rustc --explain E0432`.
+error: could not compile `uppercase-converter` (lib) due to 1 previous error
+
+
+---
+
+
+Pls make all staeps inside ONE script agsin
+
+---
+
+
+In wich path find the coverage report
+
+---
+
+
+Pls make all staeps inside ONE script agsin
+
+---
+
+
+Please add the script the method to test is the project folder already exests, and if exitst remove that first
+
+---
+
+
+Pls make all staeps inside ONE script agsin
+
+---
+
+
+Where locate the line coverage report
+
+---
+
+
+Pls add the steps the create_project.sh file
+
+---
+
+
+Pls make all staeps inside ONE script agsin
+
+---
+

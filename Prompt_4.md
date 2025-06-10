@@ -42,7 +42,7 @@ assert_cmd = "2.0"
 predicates = "3.0"
 ````
 
-2. The `lib.rs` file is missing. Let's create it:
+2.The `lib.rs` file is missing. Let's create it:
 
 ````rust
 use crate::error::UppercaseError;
@@ -62,7 +62,7 @@ pub fn convert_to_uppercase(input: &str) -> Result<String, UppercaseError> {
 }
 ````
 
-3. The `error.rs` file is missing. Let's create it:
+3.The `error.rs` file is missing. Let's create it:
 
 ````rust
 use thiserror::Error;
@@ -74,7 +74,7 @@ pub enum UppercaseError {
 }
 ````
 
-4. Let's update the `main.rs` to use the newer clap syntax:
+4.Let's update the `main.rs` to use the newer clap syntax:
 
 ````rust
 use clap::{Command, Arg};
@@ -110,7 +110,7 @@ fn main() {
 }
 ````
 
-5. Let's create the project documentation:
+5.Let's create the project documentation:
 
 ````markdown
 # Uppercase Converter Project
@@ -122,7 +122,7 @@ fn main() {
 - **Rust Version**: 1.74.0 (or latest stable)
 ````
 
-6. Create a changelog:
+6.Create a changelog:
 
 ````markdown
 # Changelog
@@ -138,13 +138,15 @@ fn main() {
 
 To build and test the program:
 
-1. Open terminal in the project directory and run:
+1.Open terminal in the project directory and run:
+
 ```bash
 cargo build
 cargo test
 ```
 
-2. To run the program:
+2.To run the program:
+
 ```bash
 cargo run -- "hello world"
 ```
@@ -196,7 +198,7 @@ assert_cmd = "2.0"
 predicates = "3.0"
 ````
 
-3. Create the source files structure:
+3.Create the source files structure:
 
 ```bash
 mkdir -p src/utils
@@ -205,7 +207,7 @@ mkdir -p docs
 mkdir -p examples
 ```
 
-4. Create the main source files:
+4.Create the main source files:
 
 ````rust
 use clap::{Command, Arg};
@@ -3011,6 +3013,7 @@ Reports will be located at:
 ````
 
 3. To view the coverage:
+
 - In browser: `xdg-open ~/uppercase-converter/target/llvm-cov/html/index.html`
 - In VS Code: 
   1. Install "Coverage Gutters" extension
@@ -3112,6 +3115,7 @@ main
 ````
 
 This update adds:
+
 1. A new `setup_coverage` function that:
    - Installs required coverage tools
    - Generates HTML and LCOV coverage reports
@@ -3123,6 +3127,7 @@ This update adds:
 3. VS Code integration through Coverage Gutters extension
 
 To view the coverage:
+
 - In browser: `xdg-open ~/uppercase-converter/target/llvm-cov/html/index.html`
 - In VS Code: Install Coverage Gutters extension and use Command Palette to run "Coverage Gutters: Watch"
 
@@ -3136,7 +3141,7 @@ Pls make all staeps inside ONE script agsin
 
 _**Assistant**_
 
-# Complete Rust Project Setup Script with Coverage
+## Complete Rust Project Setup Script with Coverage
 
 Here's a complete single script that includes all necessary steps, including coverage reporting:
 
@@ -3352,17 +3357,20 @@ main
 
 To use this script:
 
-1. Save it and make it executable:
+1.Save it and make it executable:
+
 ```bash
 chmod +x create_project.sh
 ```
 
-2. Run it:
+2.Run it:
+
 ```bash
 ./create_project.sh
 ```
 
 The script will:
+
 - Check for required tools
 - Handle existing project directory
 - Create project structure
@@ -3372,85 +3380,8 @@ The script will:
 - Initialize git repository
 
 Coverage reports will be available at:
+
 - HTML: `~/uppercase-converter/target/llvm-cov/html/index.html`
 - LCOV: `~/uppercase-converter/target/llvm-cov/lcov.info`
 
 ---
-
-_**User**_
-
-How can we inside a bash shelle grep for exttrasct the text section between  _**User**_ and the next follow  _**Assistant**_
-
----
-
-_**Assistant**_
-
-To extract text between `_**User**_` and `_**Assistant**_` in a bash shell, you can use this command:
-
-````bash
-awk '/_\*\*User\*\*_/{flag=1;next} /_\*\*Assistant\*\*_/{flag=0} flag' file.md
-````
-
-Or using sed:
-
-````bash
-sed -n '/_\*\*User\*\*_/,/_\*\*Assistant\*\*_/{ /_\*\*User\*\*_/n; /_\*\*Assistant\*\*_/!p; }' file.md
-````
-
-Both commands will:
-1. Look for the pattern `_**User**_`
-2. Print all lines until `_**Assistant**_`
-3. Exclude the marker lines themselves
-4. Work with multiple sections in the file
-
-Example usage:
-```bash
-# Using awk
-awk '/_\*\*User\*\*_/{flag=1;next} /_\*\*Assistant\*\*_/{flag=0} flag' Prompt_4.md
-
-# Using sed
-sed -n '/_\*\*User\*\*_/,/_\*\*Assistant\*\*_/{ /_\*\*User\*\*_/n; /_\*\*Assistant\*\*_/!p; }' Prompt_4.md
-```
-
----
-
-_**User**_
-
-How can we inside a bash shelle grep for remove  --- and double emty lines
-
----
-
-_**Assistant**_
-
-To remove `---` lines and double empty lines in a bash shell, you can use this command:
-
-````bash
-# Remove --- lines and collapse multiple empty lines into one
-sed '/^---$/d; /^$/N;/^\n$/D' file.md
-````
-
-Or using a combination of grep and cat:
-
-````bash
-# Remove --- lines and squeeze empty lines
-cat file.md | grep -v '^---$' | cat -s
-````
-
-Both commands will:
-1. Remove lines containing only `---`
-2. Collapse multiple empty lines into a single empty line
-3. Preserve other content
-
-Example usage:
-```bash
-# Using sed
-sed '/^---$/d; /^$/N;/^\n$/D' input.md > output.md
-
-# Using grep and cat
-cat input.md | grep -v '^---$' | cat -s > output.md
-```
-
-The `-s` option in `cat` squeezes multiple adjacent empty lines into a single empty line.
-
----
-

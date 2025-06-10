@@ -1,0 +1,28 @@
+
+Analyse tzhe local file Prompt.md and create
+
+---
+
+
+Ploease run the programm reviiew the output and fix all errors, markdown files too
+
+---
+
+
+Pls fix => cargo build
+cargo test
+error: could not find `Cargo.toml` in `/home/trapapa/create_prompt_rust_project_two` or any parent directory
+error: could not find `Cargo.toml` in `/home/trapapa/create_prompt_rust_project_two` or any parent directory
+
+---
+
+
+Pls craete the project inside a new folder of the home directory  logged in user 
+
+---
+
+
+Pls make all staeps inside ONE script
+
+---
+

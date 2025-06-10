@@ -1,0 +1,156 @@
+
+Analyse tzhe local file Prompt.md and create
+
+---
+
+
+Ploease run the programm reviiew the output and fix all errors, markdown files too
+
+---
+
+
+Pls fix => cargo build
+cargo test
+error: could not find `Cargo.toml` in `/home/trapapa/create_prompt_rust_project_two` or any parent directory
+error: could not find `Cargo.toml` in `/home/trapapa/create_prompt_rust_project_two` or any parent directory
+
+---
+
+
+Pls craete the project inside a new folder of the home directory  logged in user 
+
+---
+
+
+Pls make all staeps inside ONE script
+
+---
+
+---
+
+
+Pls make all staeps inside ONE script
+
+---
+
+
+Pls make all staeps inside ONE script agsin
+
+---
+
+
+# Task: Create a Command-Line String Uppercase Converter in Rust
+
+## Core Functionality
+
+1. Create a command-line application in Rust that:
+   - Accepts string input from users
+   - Converts the input to uppercase
+   - Displays the result
+
+### Technical Requirements
+
+1. Project Structure:
+   - Create a new project in the current folder
+   - Proper Rust project layout with Cargo
+   - Separate library and binary crates
+   - Organized test directory
+
+2. Dependencies:
+   - Use `clap` for CLI argument parsing
+   - Implement error handling with `anyhow` and `thiserror`# create prompt rust project
+
+## Project Requirements
+
+- Condition
+  - Make all steps for create a new  project init inside ONE script
+  - Pls create the project inside a new folder of the home directory  logged in user
+
+---
+
+
+# Task: Create a Command-Line String Uppercase Converter in Rust
+
+## Core Functionality
+
+1. Create a command-line application in Rust that:
+   - Accepts string input from users
+   - Converts the input to uppercase
+   - Displays the result
+
+### Technical Requirements
+
+1. Project Structure:
+   - Create a new project in the current folder
+   - Proper Rust project layout with Cargo
+   - Separate library and binary crates
+   - Organized test directory
+
+2. Dependencies:
+   - Use `clap` for CLI argument parsing
+   - Implement error handling with `anyhow` and `thiserror`# create prompt rust project
+
+## Project Requirements
+
+- Condition
+  - Make all steps for create a new  project init inside a single bash script with all the steps required to create the project
+  - Pls create the project inside a new folder of the home directory  logged in user
+
+---
+
+
+this programm has follow error => error[E0432]: unresolved import `crate::error`
+ --> src/lib.rs:1:12
+  |
+1 | use crate::error::UppercaseError;
+  |            ^^^^^
+  |            |
+  |            unresolved import
+  |            help: a similar path exists: `clap::error`
+
+For more information about this error, try `rustc --explain E0432`.
+error: could not compile `uppercase-converter` (lib) due to 1 previous error
+
+
+---
+
+
+Pls make all staeps inside ONE script agsin
+
+---
+
+
+In wich path find the coverage report
+
+---
+
+
+Pls make all staeps inside ONE script agsin
+
+---
+
+
+Please add the script the method to test is the project folder already exests, and if exitst remove that first
+
+---
+
+
+Pls make all staeps inside ONE script agsin
+
+---
+
+
+Where locate the line coverage report
+
+---
+
+
+Pls add the steps the create_project.sh file
+
+---
+
+
+Pls make all staeps inside ONE script agsin
+
+---
+

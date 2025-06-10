@@ -3437,11 +3437,13 @@ cat file.md | grep -v '^---$' | cat -s
 ````
 
 Both commands will:
+
 1. Remove lines containing only `---`
 2. Collapse multiple empty lines into a single empty line
 3. Preserve other content
 
 Example usage:
+
 ```bash
 # Using sed
 sed '/^---$/d; /^$/N;/^\n$/D' input.md > output.md
