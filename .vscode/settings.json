@@ -5,6 +5,7 @@
         "eprintln",
         "lcovname",
         "println",
+        "profdata",
         "rustc",
         "Rustdoc",
         "staeps",

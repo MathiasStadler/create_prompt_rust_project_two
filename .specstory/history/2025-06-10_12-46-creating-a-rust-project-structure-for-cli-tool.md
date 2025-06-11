@@ -6243,6 +6243,445 @@ main || {
 
 # Add start instructions as block command
 : <<'START_INSTRUCTIONS'
+To use this script:
+
+1. Save this file as create_project_final.sh
+2. Make it executable:
+   chmod +x create_project_final.sh
+3. Run the script:
+   ./create_project_final.sh
+
+The script will:
+- Create a new Rust project
+- Set up all required dependencies
+- Configure VS Code settings
+- Generate coverage reports
+- Create profiling data
+- Log all operations
+
+Reports will be available at:
+- Coverage HTML: ~/uppercase-converter/target/llvm-cov/html/index.html
+- Coverage LCOV: ~/uppercase-converter/target/llvm-cov/lcov.info
+- Profiling HTML: ~/uppercase-converter/target/debug/profiling/html/index.html
+- Setup Log: logs/project_setup_*.log
+
+Requirements:
+- Linux/Unix system
+- Rust toolchain installed
+- VS Code with required extensions
+- Git installed
+- LLVM tools installed
+
+For manual execution:
+create_project_file_name=create_project_final.sh
+echo $create_project_file_name
+chmod +x $create_project_file_name
+./$create_project_file_name
+START_INSTRUCTIONS
+````
+
+The script now includes:
+1. Complete error handling
+2. Start instructions as a block command
+3. Clear documentation of requirements
+4. Manual execution commands
+5. Report locations
+6. All necessary functions for project setup
+
+To use the script, follow the instructions in the block command section at the end of the file.
+
+---
+
+_**User**_
+
+Please fix the following errors and create a prompt part for the next prompt so that this is taken into account => [{
+	"resource": "/home/trapapa/create_prompt_rust_project_two/create_project_7.sh",
+	"owner": "cSpell",
+	"severity": 2,
+	"message": "\"lldb\": Unknown word.",
+	"source": "cSpell",
+	"startLineNumber": 32,
+	"startColumn": 42,
+	"endLineNumber": 32,
+	"endColumn": 46
+},{
+	"resource": "/home/trapapa/create_prompt_rust_project_two/create_project_7.sh",
+	"owner": "cSpell",
+	"severity": 2,
+	"message": "\"rustup\": Unknown word.",
+	"source": "cSpell",
+	"startLineNumber": 36,
+	"startColumn": 5,
+	"endLineNumber": 36,
+	"endColumn": 11
+},{
+	"resource": "/home/trapapa/create_prompt_rust_project_two/create_project_7.sh",
+	"owner": "cSpell",
+	"severity": 2,
+	"message": "\"rustup\": Unknown word.",
+	"source": "cSpell",
+	"startLineNumber": 40,
+	"startColumn": 5,
+	"endLineNumber": 40,
+	"endColumn": 11
+},{
+	"resource": "/home/trapapa/create_prompt_rust_project_two/create_project_7.sh",
+	"owner": "cSpell",
+	"severity": 2,
+	"message": "\"binutils\": Unknown word.",
+	"source": "cSpell",
+	"startLineNumber": 44,
+	"startColumn": 25,
+	"endLineNumber": 44,
+	"endColumn": 33
+},{
+	"resource": "/home/trapapa/create_prompt_rust_project_two/create_project_7.sh",
+	"owner": "cSpell",
+	"severity": 2,
+	"message": "\"ryanluker\": Unknown word.",
+	"source": "cSpell",
+	"startLineNumber": 53,
+	"startColumn": 30,
+	"endLineNumber": 53,
+	"endColumn": 39
+},{
+	"resource": "/home/trapapa/create_prompt_rust_project_two/create_project_7.sh",
+	"owner": "cSpell",
+	"severity": 2,
+	"message": "\"RUSTFLAGS\": Unknown word.",
+	"source": "cSpell",
+	"startLineNumber": 203,
+	"startColumn": 12,
+	"endLineNumber": 203,
+	"endColumn": 21
+},{
+	"resource": "/home/trapapa/create_prompt_rust_project_two/create_project_7.sh",
+	"owner": "cSpell",
+	"severity": 2,
+	"message": "\"profraw\": Unknown word.",
+	"source": "cSpell",
+	"startLineNumber": 210,
+	"startColumn": 62,
+	"endLineNumber": 210,
+	"endColumn": 69
+},{
+	"resource": "/home/trapapa/create_prompt_rust_project_two/create_project_7.sh",
+	"owner": "cSpell",
+	"severity": 2,
+	"message": "\"profdata\": Unknown word.",
+	"source": "cSpell",
+	"startLineNumber": 214,
+	"startColumn": 14,
+	"endLineNumber": 214,
+	"endColumn": 22
+},{
+	"resource": "/home/trapapa/create_prompt_rust_project_two/create_project_7.sh",
+	"owner": "cSpell",
+	"severity": 2,
+	"message": "\"profraw\": Unknown word.",
+	"source": "cSpell",
+	"startLineNumber": 214,
+	"startColumn": 62,
+	"endLineNumber": 214,
+	"endColumn": 69
+},{
+	"resource": "/home/trapapa/create_prompt_rust_project_two/create_project_7.sh",
+	"owner": "cSpell",
+	"severity": 2,
+	"message": "\"profdata\": Unknown word.",
+	"source": "cSpell",
+	"startLineNumber": 214,
+	"startColumn": 103,
+	"endLineNumber": 214,
+	"endColumn": 111
+},{
+	"resource": "/home/trapapa/create_prompt_rust_project_two/create_project_7.sh",
+	"owner": "cSpell",
+	"severity": 2,
+	"message": "\"profdata\": Unknown word.",
+	"source": "cSpell",
+	"startLineNumber": 223,
+	"startColumn": 63,
+	"endLineNumber": 223,
+	"endColumn": 71
+},{
+	"resource": "/home/trapapa/create_prompt_rust_project_two/create_project_7.sh",
+	"owner": "cSpell",
+	"severity": 2,
+	"message": "\"profdata\": Unknown word.",
+	"source": "cSpell",
+	"startLineNumber": 229,
+	"startColumn": 63,
+	"endLineNumber": 229,
+	"endColumn": 71
+}]
+
+---
+
+_**Assistant**_
+
+# Fix Spelling Issues in Bash Script
+
+The errors are related to VS Code's spell checker (cSpell). Let's add a configuration file to handle technical terms properly.
+
+1. First, create a VS Code workspace settings file:
+
+````json
+{
+    "cSpell.words": [
+        "binutils",
+        "lldb",
+        "profdata",
+        "profraw",
+        "rustup",
+        "RUSTFLAGS",
+        "ryanluker"
+    ],
+    "cSpell.ignorePaths": [
+        "node_modules",
+        "**/node_modules",
+        "**/node_modules/**",
+        "target/**"
+    ]
+}
+````
+
+2. Create a project-wide dictionary:
+
+````text
+{
+    "version": "0.2",
+    "language": "en",
+    "words": [
+        "binutils",
+        "clippy",
+        "lldb",
+        "profdata",
+        "profraw",
+        "rustup",
+        "RUSTFLAGS",
+        "ryanluker"
+    ],
+    "flagWords": []
+}
+````
+
+Now add these commands to your script:
+
+````bash
+# Function: Configure VS Code settings
+configure_vscode() {
+    mkdir -p .vscode
+    
+    # Create VS Code settings
+    cat > .vscode/settings.json << 'EOL'
+{
+    "cSpell.words": [
+        "binutils",
+        "lldb",
+        "profdata",
+        "profraw",
+        "rustup",
+        "RUSTFLAGS",
+        "ryanluker"
+    ],
+    "cSpell.ignorePaths": [
+        "node_modules",
+        "**/node_modules",
+        "**/node_modules/**",
+        "target/**"
+    ],
+    "rust-analyzer.checkOnSave.command": "clippy",
+    "coverage-gutters.lcovname": "target/llvm-cov/lcov.info",
+    "coverage-gutters.showLineCoverage": true,
+    "coverage-gutters.showRulerCoverage": true,
+    "editor.formatOnSave": true
+}
+EOL
+
+    # Create cspell configuration
+    cat > .cspell.json << 'EOL'
+{
+    "version": "0.2",
+    "language": "en",
+    "words": [
+        "binutils",
+        "clippy",
+        "lldb",
+        "profdata",
+        "profraw",
+        "rustup",
+        "RUSTFLAGS",
+        "ryanluker"
+    ],
+    "flagWords": []
+}
+EOL
+}
+````
+
+Then call this function in your main:
+
+````bash
+main() {
+    # ...existing code...
+    check_requirements || exit 1
+    setup_project || exit 1
+    configure_vscode || exit 1  # Add this line
+    create_source_files || exit 1
+    # ...existing code...
+}
+````
+
+This will:
+1. Configure VS Code to recognize technical terms
+2. Set up project-wide spell checking
+3. Ignore false positives for Rust-specific terms
+4. Maintain code quality checks
+
+The spell checker errors should now be resolved while maintaining proper technical terminology.
+
+---
+
+_**User**_
+
+create a prompt part to avoid this in future
+
+---
+
+_**Assistant**_
+
+# Markdown Style Guidelines for Code Responses
+
+Here's a prompt template to ensure consistent code formatting in responses:
+
+````markdown
+# Code Response Style Guide
+
+## Code Block Format
+- Use 4 backticks to start and end code blocks
+- Always specify the language after opening backticks
+- Include filepath comment for existing files
+- Use `...existing code...` to indicate unchanged sections
+
+## Example Format
+````bash
+# filepath: /path/to/script.sh
+# ...existing code...
+new_function() {
+    echo "New code here"
+}
+# ...existing code...
+````
+
+## File Paths
+- Always use absolute paths for existing files
+- Start with `filepath:` comment
+- Use system-specific paths (Linux format)
+
+## VS Code Integration
+- Consider VS Code's integrated features:
+  - Output pane
+  - Integrated terminal
+  - Test explorer
+  - Editor context
+
+## System Commands
+- Use Linux-compatible commands
+- Include file permissions where needed
+- Consider environment variables
+
+## Code Block Types
+1. New Files:
+````bash
+# New file - no filepath needed
+echo "Creating new file"
+````
+
+2. Existing Files:
+````bash
+# filepath: /existing/file/path
+# ...existing code...
+new_content
+````
+
+3. Configuration Files:
+````json
+// filepath: .vscode/settings.json
+{
+    "setting": "value"
+}
+````
+````
+
+Save this guide and reference it when creating responses to ensure consistent formatting.Save this guide and reference it when creating responses to ensure consistent formatting.
+
+---
+
+_**User**_
+
+Pls make all steps inside ONE script again and add the start instruction as block command again
+
+---
+
+_**Assistant**_
+
+# Complete Rust Project Setup Script with Block Commands
+
+I'll help create a complete script with proper Markdown formatting and block commands:
+
+````bash
+#!/bin/bash
+
+# Enable error handling and debugging
+set -e
+set -x
+
+# Setup logging with timestamps
+LOG_DIR="logs"
+LOG_FILE="${LOG_DIR}/project_setup_$(date +%Y%m%d_%H%M%S).log"
+mkdir -p "$LOG_DIR"
+exec 1> >(tee -a "$LOG_FILE")
+exec 2>&1
+
+# Color definitions for better visibility
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+NC='\033[0m'
+
+# Project configuration
+HOME_DIR="$HOME"
+PROJECT_NAME="uppercase-converter"
+PROJECT_PATH="$HOME_DIR/$PROJECT_NAME"
+
+# Function: Check system requirements
+check_requirements() {
+    echo "Checking system requirements..."
+    
+    # Check and install required packages
+    sudo apt-get update -qq
+    sudo apt-get install -y -qq llvm lldb
+    
+    # Update Rust toolchain
+    rustup update stable
+    rustup component add llvm-tools-preview
+    
+    # Install cargo tools
+    cargo install cargo-llvm-cov --quiet || true
+    cargo install cargo-binutils --quiet || true
+    
+    # Install VS Code extensions
+    code --install-extension ryanluker.vscode-coverage-gutters
+    code --install-extension rust-lang.rust-analyzer
+}
+
+# Function: Setup project
+setup_project() {
+    if [ -d "$PROJECT_PATH" ]; then
+        read -p "Project exists. Remove? (y/N) " -n 1 -r
+        echo
+        if [[ $REPLY =~ ^[Yy]$ ]]; then
 
 ---
 

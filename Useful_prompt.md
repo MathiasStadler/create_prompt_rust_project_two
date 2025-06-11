@@ -11,6 +11,10 @@
 - In which path find the coverage report
 - Pls make all steps inside ONE script again and add the start instruction as block command
 
+## Error handling
+
+- Please fix the following errors and create a prompt part for the next prompt so that this is taken into account
+
 ## Task: Create a Command-Line String Uppercase Converter in Rust
 
 ## Core Functionality
@@ -40,3 +44,24 @@
   - Make all steps for create a new  project init inside a single bash script with all the steps required to create the project
   - Pls create the project inside a new folder of the home directory  logged in user
   
+## Avoid format errors
+
+## Code Response Style Guide
+
+## Code Block Format
+
+- Insert before and after a code block a blank line
+- Use 3 backticks to start and end code blocks
+- Always specify the language after opening backticks
+- Include filepath comment for existing files
+- Use `...existing code...` to indicate unchanged sections
+
+## Example Format
+
+````bash
+# filepath: /path/to/script.sh
+# ...existing code...
+new_function() {
+    echo "New code here"
+}
+# ...existing code...
