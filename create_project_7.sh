@@ -4,14 +4,14 @@
 set -e
 set -x
 
-# Setup logging
+# Setup logging with timestamps
 LOG_DIR="logs"
 LOG_FILE="${LOG_DIR}/project_setup_$(date +%Y%m%d_%H%M%S).log"
 mkdir -p "$LOG_DIR"
 exec 1> >(tee -a "$LOG_FILE")
 exec 2>&1
 
-# Color definitions
+# Color definitions for better visibility
 RED='\033[0;31m'
 GREEN='\033[0;32m'
 YELLOW='\033[1;33m'
@@ -27,35 +27,51 @@ check_requirements() {
     echo "Checking system requirements..."
     
     # Check and install required packages
-    sudo apt-get update
-    sudo apt-get install -y llvm lldb
+    if command -v apt-get &> /dev/null; then
+        sudo apt-get update -qq
+        sudo apt-get install -y -qq llvm lldb
+    fi
     
-    # Update Rust and tools
-    rustup update stable
+    # Update Rust toolchain
+    rustup update stable || {
+        echo -e "${RED}Failed to update Rust toolchain${NC}"
+        return 1
+    }
     rustup component add llvm-tools-preview
     
     # Install cargo tools
-    cargo install cargo-llvm-cov --force
-    cargo install cargo-binutils --force
+    cargo install cargo-llvm-cov --quiet || true
+    cargo install cargo-binutils --quiet || true
     
-    # Check VS Code extensions
-    code --install-extension ryanluker.vscode-coverage-gutters
-    code --install-extension rust-lang.rust-analyzer
+    # Check VS Code installation
+    if ! command -v code &> /dev/null; then
+        echo -e "${RED}VS Code not installed${NC}"
+        return 1
+    fi
+    
+    # Install VS Code extensions
+    code --install-extension ryanluker.vscode-coverage-gutters || true
+    code --install-extension rust-lang.rust-analyzer || true
 }
 
-# Function: Setup project
+# Function: Setup project structure
 setup_project() {
     if [ -d "$PROJECT_PATH" ]; then
-        read -p "Project exists. Remove? (y/N) " -n 1 -r
+        echo -e "${YELLOW}Project directory exists at: $PROJECT_PATH${NC}"
+        read -p "Remove it? (y/N) " -n 1 -r
         echo
         if [[ $REPLY =~ ^[Yy]$ ]]; then
             rm -rf "$PROJECT_PATH"
         else
-            exit 1
+            return 1
         fi
     fi
 
-    cargo new "$PROJECT_PATH" --lib
+    # Create new project
+    cargo new "$PROJECT_PATH" --lib || {
+        echo -e "${RED}Failed to create project${NC}"
+        return 1
+    }
     cd "$PROJECT_PATH"
     
     # Add dependencies
@@ -65,13 +81,13 @@ setup_project() {
     cargo add --dev assert_cmd
     cargo add --dev predicates
     
-    # Create project structure
+    # Create directory structure
     mkdir -p src/{bin,tests}
 }
 
 # Function: Create source files
 create_source_files() {
-    # Create error.rs
+    # Create error.rs first
     cat > src/error.rs << 'EOL'
 use thiserror::Error;
 
@@ -173,24 +189,10 @@ configure_project() {
 }
 EOL
 
-    # Update Cargo.toml with profiling settings
-    cat >> Cargo.toml << 'EOL'
-
-[profile.release]
-debug = true
-debug-assertions = true
-
-[profile.profiling]
-inherits = "release"
-debug = true
-debug-assertions = true
-lto = false
-incremental = false
-EOL
-
-    # Initialize git
+    # Initialize git repository
     git init
-    echo "target/" > .gitignore
+    echo "/target/" > .gitignore
+    echo "Cargo.lock" >> .gitignore
     git add .
     git commit -m "Initial commit"
 }
@@ -198,9 +200,9 @@ EOL
 # Function: Generate profiling data
 generate_profiling() {
     # Set profiling flags
-    export RUSTFLAGS="-C instrument-coverage -C link-dead-code"
+    export RUSTFLAGS="-C instrument-coverage"
     
-    # Setup profiling directories
+    # Clean and create profiling directory
     rm -rf target/debug/profiling
     mkdir -p target/debug/profiling
     
@@ -208,40 +210,51 @@ generate_profiling() {
     LLVM_PROFILE_FILE="target/debug/profiling/coverage-%p-%m.profraw" cargo test
     
     # Generate reports
-    llvm-profdata merge -sparse target/debug/profiling/*.profraw -o target/debug/profiling/merged.profdata
-    
-    # Create HTML and text reports
-    llvm-cov show \
-        --format=html \
-        --ignore-filename-regex='/.cargo/registry' \
-        --instr-profile=target/debug/profiling/merged.profdata \
-        --object target/debug/deps/uppercase_converter-* \
-        --output-dir=target/debug/profiling/html
-    
-    llvm-cov report \
-        --use-color \
-        --ignore-filename-regex='/.cargo/registry' \
-        --instr-profile=target/debug/profiling/merged.profdata \
-        --object target/debug/deps/uppercase_converter-* \
-        > target/debug/profiling/coverage_report.txt
+    if [ -d target/debug/deps ]; then
+        llvm-profdata merge -sparse target/debug/profiling/*.profraw -o target/debug/profiling/merged.profdata
+        
+        # Find the test binary
+        TEST_BIN=$(find target/debug/deps -type f -executable -name "uppercase_converter-*" | head -n 1)
+        
+        if [ -n "$TEST_BIN" ]; then
+            llvm-cov show \
+                --format=html \
+                --ignore-filename-regex='/.cargo/registry' \
+                --instr-profile=target/debug/profiling/merged.profdata \
+                --object "$TEST_BIN" \
+                --output-dir=target/debug/profiling/html
+                
+            llvm-cov report \
+                --ignore-filename-regex='/.cargo/registry' \
+                --instr-profile=target/debug/profiling/merged.profdata \
+                --object "$TEST_BIN" \
+                > target/debug/profiling/coverage_report.txt
+        else
+            echo -e "${RED}No test binary found${NC}"
+            return 1
+        fi
+    else
+        echo -e "${RED}No debug artifacts found${NC}"
+        return 1
+    fi
 }
 
 # Main execution
 main() {
     echo "Starting project setup at $(date)"
     
-    check_requirements
-    setup_project
-    create_source_files
-    configure_project
+    check_requirements || exit 1
+    setup_project || exit 1
+    create_source_files || exit 1
+    configure_project || exit 1
     
     # Run tests and generate reports
-    cargo fmt
+    cargo fmt || true
     cargo clippy
     cargo test
     cargo llvm-cov --html --output-dir target/llvm-cov/html
     cargo llvm-cov --lcov --output-path target/llvm-cov/lcov.info
-    generate_profiling
+    generate_profiling || echo -e "${YELLOW}Profiling failed but continuing...${NC}"
     
     echo -e "${GREEN}Project setup complete!${NC}"
     echo "Project location: $PROJECT_PATH"
@@ -250,18 +263,14 @@ main() {
     echo "Log file: $LOG_FILE"
 }
 
-# Run main function
-mainError writing files: failed to resolve mod `error`: /home/trapapa/uppercase-converter/src/error.rs does not exist
-
-# create_project_file_name=create_project_4.sh
-# echo $create_project_file_name
-# chmod +x $create_project_file_name
-# ./$create_project_file_name
-
-
+# Run main function with error handling
+main || {
+    echo -e "${RED}Script failed! Check the log file: $LOG_FILE${NC}"
+    exit 1
+}
 
 <<Block_comment
-create_project_file_name=create_project_4.sh
+create_project_file_name=create_project_7.sh
 echo $create_project_file_name
 chmod +x $create_project_file_name
 ./$create_project_file_name

@@ -1,0 +1,11 @@
++ RED='\033[0;31m'
++ GREEN='\033[0;32m'
++ YELLOW='\033[1;33m'
++ NC='\033[0m'
++ HOME_DIR=/home/trapapa
++ PROJECT_NAME=uppercase-converter
++ PROJECT_PATH=/home/trapapa/uppercase-converter
+++ error
+./create_project_4.sh: line 254: error: command not found
++ mainError writing files: failed to resolve mod : /home/trapapa/uppercase-converter/src/error.rs does not exist
+./create_project_4.sh: line 254: mainError: command not found

@@ -1,0 +1,433 @@
++ RED='\033[0;31m'
++ GREEN='\033[0;32m'
++ YELLOW='\033[1;33m'
++ NC='\033[0m'
++ HOME_DIR=/home/trapapa
++ PROJECT_NAME=uppercase-converter
++ PROJECT_PATH=/home/trapapa/uppercase-converter
++ main
+++ date
++ echo 'Starting project setup at Wed Jun 11 09:39:44 AM CEST 2025'
+Starting project setup at Wed Jun 11 09:39:44 AM CEST 2025
++ check_requirements
++ echo 'Checking system requirements...'
+Checking system requirements...
++ command -v apt-get
++ sudo apt-get update -qq
++ sudo apt-get install -y -qq llvm lldb
++ rustup update stable
+info: syncing channel updates for 'stable-x86_64-unknown-linux-gnu'
+
+  stable-x86_64-unknown-linux-gnu unchanged - rustc 1.87.0 (17067e9ac 2025-05-09)
+
+info: checking for self-update
++ rustup component add llvm-tools-preview
+info: component 'llvm-tools' for target 'x86_64-unknown-linux-gnu' is up to date
++ cargo install cargo-llvm-cov --quiet
++ cargo install cargo-binutils --quiet
++ command -v code
++ code --install-extension ryanluker.vscode-coverage-gutters
+Installing extensions...
+Extension 'ryanluker.vscode-coverage-gutters' v2.13.0 is already installed. Use '--force' option to update to latest version or provide '@<version>' to install a specific version, for example: 'ryanluker.vscode-coverage-gutters@1.2.3'.
++ code --install-extension rust-lang.rust-analyzer
+Installing extensions...
+Extension 'rust-lang.rust-analyzer' v0.3.2490 is already installed. Use '--force' option to update to latest version or provide '@<version>' to install a specific version, for example: 'rust-lang.rust-analyzer@1.2.3'.
++ setup_project
++ '[' -d /home/trapapa/uppercase-converter ']'
++ echo -e '\033[1;33mProject directory exists at: /home/trapapa/uppercase-converter\033[0m'
+[1;33mProject directory exists at: /home/trapapa/uppercase-converter[0m
++ read -p 'Remove it? (y/N) ' -n 1 -r
+Remove it? (y/N) + echo
+
++ [[ y =~ ^[Yy]$ ]]
++ rm -rf /home/trapapa/uppercase-converter
++ cargo new /home/trapapa/uppercase-converter --lib
+    Creating library `uppercase-converter` package
+note: see more `Cargo.toml` keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
++ cd /home/trapapa/uppercase-converter
++ cargo add clap --features derive
+    Updating crates.io index
+      Adding clap v4.5.40 to dependencies
+             Features:
+             + color
+             + derive
+             + error-context
+             + help
+             + std
+             + suggestions
+             + usage
+             - cargo
+             - debug
+             - deprecated
+             - env
+             - string
+             - unicode
+             - unstable-derive-ui-tests
+             - unstable-doc
+             - unstable-ext
+             - unstable-markdown
+             - unstable-styles
+             - unstable-v5
+             - wrap_help
+    Updating crates.io index
+     Locking 29 packages to latest Rust 1.87.0 compatible versions
++ cargo add thiserror
+    Updating crates.io index
+      Adding thiserror v2.0.12 to dependencies
+             Features:
+             + std
+    Updating crates.io index
+     Locking 2 packages to latest Rust 1.87.0 compatible versions
+      Adding thiserror v2.0.12
+      Adding thiserror-impl v2.0.12
++ cargo add anyhow
+    Updating crates.io index
+      Adding anyhow v1.0.98 to dependencies
+             Features:
+             + std
+             - backtrace
+    Updating crates.io index
+     Locking 1 package to latest Rust 1.87.0 compatible version
+      Adding anyhow v1.0.98
++ cargo add --dev assert_cmd
+    Updating crates.io index
+      Adding assert_cmd v2.0.17 to dev-dependencies
+             Features:
+             - color
+             - color-auto
+    Updating crates.io index
+     Locking 14 packages to latest Rust 1.87.0 compatible versions
+      Adding assert_cmd v2.0.17
+      Adding bstr v1.12.0
+      Adding difflib v0.4.0
+      Adding doc-comment v0.3.3
+      Adding libc v0.2.172
+      Adding memchr v2.7.4
+      Adding predicates v3.1.3
+      Adding predicates-core v1.0.9
+      Adding predicates-tree v1.0.12
+      Adding regex-automata v0.4.9
+      Adding serde v1.0.219
+      Adding serde_derive v1.0.219
+      Adding termtree v0.5.1
+      Adding wait-timeout v0.2.1
++ cargo add --dev predicates
+    Updating crates.io index
+      Adding predicates v3.1.3 to dev-dependencies
+             Features:
+             + color
+             + diff
+             + float-cmp
+             + normalize-line-endings
+             + regex
+             - unstable
+     Locking 7 packages to latest Rust 1.87.0 compatible versions
+      Adding aho-corasick v1.1.3
+      Adding autocfg v1.4.0
+      Adding float-cmp v0.10.0
+      Adding normalize-line-endings v0.3.0
+      Adding num-traits v0.2.19
+      Adding regex v1.11.1
+      Adding regex-syntax v0.8.5
++ mkdir -p src/bin src/tests
++ create_source_files
++ cat
++ cat
++ cat
++ configure_project
++ mkdir -p .vscode
++ cat
++ git init
+Reinitialized existing Git repository in /home/trapapa/uppercase-converter/.git/
++ echo /target/
++ echo Cargo.lock
++ git add .
++ git commit -m 'Initial commit'
+[master (root-commit) 130da37] Initial commit
+ 6 files changed, 97 insertions(+)
+ create mode 100644 .gitignore
+ create mode 100644 .vscode/settings.json
+ create mode 100644 Cargo.toml
+ create mode 100644 src/bin/main.rs
+ create mode 100644 src/error.rs
+ create mode 100644 src/lib.rs
++ cargo fmt
++ cargo clippy
+   Compiling proc-macro2 v1.0.95
+   Compiling unicode-ident v1.0.18
+    Checking utf8parse v0.2.2
+    Checking is_terminal_polyfill v1.70.1
+    Checking colorchoice v1.0.4
+    Checking anstyle-parse v0.2.7
+    Checking anstyle-query v1.1.3
+    Checking anstyle v1.0.11
+   Compiling thiserror v2.0.12
+    Checking clap_lex v0.7.5
+    Checking anstream v0.6.19
+    Checking strsim v0.11.1
+   Compiling anyhow v1.0.98
+   Compiling heck v0.5.0
+    Checking clap_builder v4.5.40
+   Compiling quote v1.0.40
+   Compiling syn v2.0.102
+   Compiling thiserror-impl v2.0.12
+   Compiling clap_derive v4.5.40
+    Checking clap v4.5.40
+    Checking uppercase-converter v0.1.0 (/home/trapapa/uppercase-converter)
+warning: you should consider adding a `Default` implementation for `Converter`
+  --> src/lib.rs:9:5
+   |
+9  | /     pub fn new() -> Self {
+10 | |         Self
+11 | |     }
+   | |_____^
+   |
+   = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#new_without_default
+   = note: `#[warn(clippy::new_without_default)]` on by default
+help: try adding this
+   |
+8  + impl Default for Converter {
+9  +     fn default() -> Self {
+10 +         Self::new()
+11 +     }
+12 + }
+   |
+
+warning: `uppercase-converter` (lib) generated 1 warning (run `cargo clippy --fix --lib -p uppercase-converter` to apply 1 suggestion)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 4.88s
++ cargo test
+   Compiling autocfg v1.4.0
+   Compiling anstyle v1.0.11
+   Compiling memchr v2.7.4
+   Compiling utf8parse v0.2.2
+   Compiling regex-syntax v0.8.5
+   Compiling anstyle-parse v0.2.7
+   Compiling colorchoice v1.0.4
+   Compiling num-traits v0.2.19
+   Compiling libc v0.2.172
+   Compiling aho-corasick v1.1.3
+   Compiling is_terminal_polyfill v1.70.1
+   Compiling anstyle-query v1.1.3
+   Compiling anstream v0.6.19
+   Compiling predicates-core v1.0.9
+   Compiling doc-comment v0.3.3
+   Compiling strsim v0.11.1
+   Compiling clap_lex v0.7.5
+   Compiling clap_builder v4.5.40
+   Compiling regex-automata v0.4.9
+   Compiling float-cmp v0.10.0
+   Compiling assert_cmd v2.0.17
+   Compiling termtree v0.5.1
+   Compiling normalize-line-endings v0.3.0
+   Compiling difflib v0.4.0
+   Compiling wait-timeout v0.2.1
+   Compiling clap v4.5.40
+   Compiling predicates-tree v1.0.12
+   Compiling thiserror v2.0.12
+   Compiling anyhow v1.0.98
+   Compiling regex v1.11.1
+   Compiling predicates v3.1.3
+   Compiling bstr v1.12.0
+   Compiling uppercase-converter v0.1.0 (/home/trapapa/uppercase-converter)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 6.84s
+     Running unittests src/lib.rs (target/debug/deps/uppercase_converter-e1ff6610803c2a4b)
+
+running 3 tests
+test tests::test_convert_to_uppercase ... ok
+test tests::test_empty_input ... ok
+test tests::test_new ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/bin/main.rs (target/debug/deps/main-75447740cd72a3d6)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests uppercase_converter
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
++ cargo llvm-cov --html --output-dir target/llvm-cov/html
+info: cargo-llvm-cov currently setting cfg(coverage); you can opt-out it by passing --no-cfg-coverage
+   Compiling proc-macro2 v1.0.95
+   Compiling unicode-ident v1.0.18
+   Compiling memchr v2.7.4
+   Compiling anstyle v1.0.11
+   Compiling autocfg v1.4.0
+   Compiling regex-syntax v0.8.5
+   Compiling num-traits v0.2.19
+   Compiling aho-corasick v1.1.3
+   Compiling quote v1.0.40
+   Compiling utf8parse v0.2.2
+   Compiling anstyle-parse v0.2.7
+   Compiling syn v2.0.102
+   Compiling colorchoice v1.0.4
+   Compiling libc v0.2.172
+   Compiling is_terminal_polyfill v1.70.1
+   Compiling anstyle-query v1.1.3
+   Compiling anstream v0.6.19
+   Compiling regex-automata v0.4.9
+   Compiling clap_lex v0.7.5
+   Compiling predicates-core v1.0.9
+   Compiling anyhow v1.0.98
+   Compiling doc-comment v0.3.3
+   Compiling heck v0.5.0
+   Compiling strsim v0.11.1
+   Compiling thiserror v2.0.12
+   Compiling regex v1.11.1
+   Compiling clap_builder v4.5.40
+   Compiling float-cmp v0.10.0
+   Compiling clap_derive v4.5.40
+   Compiling thiserror-impl v2.0.12
+   Compiling assert_cmd v2.0.17
+   Compiling termtree v0.5.1
+   Compiling normalize-line-endings v0.3.0
+   Compiling difflib v0.4.0
+   Compiling clap v4.5.40
+   Compiling predicates v3.1.3
+   Compiling predicates-tree v1.0.12
+   Compiling wait-timeout v0.2.1
+   Compiling bstr v1.12.0
+   Compiling uppercase-converter v0.1.0 (/home/trapapa/uppercase-converter)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 10.38s
+     Running unittests src/lib.rs (target/llvm-cov-target/debug/deps/uppercase_converter-0b05ee5575717b63)
+
+running 3 tests
+test tests::test_empty_input ... ok
+test tests::test_convert_to_uppercase ... ok
+test tests::test_new ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/bin/main.rs (target/llvm-cov-target/debug/deps/main-a07b477fbb9b71b6)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+
+    Finished report saved to target/llvm-cov/html/html
++ cargo llvm-cov --lcov --output-path target/llvm-cov/lcov.info
+info: cargo-llvm-cov currently setting cfg(coverage); you can opt-out it by passing --no-cfg-coverage
+   Compiling uppercase-converter v0.1.0 (/home/trapapa/uppercase-converter)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.29s
+     Running unittests src/lib.rs (target/llvm-cov-target/debug/deps/uppercase_converter-0b05ee5575717b63)
+
+running 3 tests
+test tests::test_empty_input ... ok
+test tests::test_convert_to_uppercase ... ok
+test tests::test_new ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/bin/main.rs (target/llvm-cov-target/debug/deps/main-a07b477fbb9b71b6)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+
+    Finished report saved to target/llvm-cov/lcov.info
++ generate_profiling
++ export 'RUSTFLAGS=-C instrument-coverage'
++ RUSTFLAGS='-C instrument-coverage'
++ rm -rf target/debug/profiling
++ mkdir -p target/debug/profiling
++ LLVM_PROFILE_FILE=target/debug/profiling/coverage-%p-%m.profraw
++ cargo test
+   Compiling proc-macro2 v1.0.95
+   Compiling unicode-ident v1.0.18
+   Compiling anstyle v1.0.11
+   Compiling autocfg v1.4.0
+   Compiling memchr v2.7.4
+   Compiling regex-syntax v0.8.5
+   Compiling num-traits v0.2.19
+   Compiling utf8parse v0.2.2
+   Compiling aho-corasick v1.1.3
+   Compiling quote v1.0.40
+   Compiling anstyle-parse v0.2.7
+   Compiling syn v2.0.102
+   Compiling anstyle-query v1.1.3
+   Compiling libc v0.2.172
+   Compiling is_terminal_polyfill v1.70.1
+   Compiling colorchoice v1.0.4
+   Compiling regex-automata v0.4.9
+   Compiling anstream v0.6.19
+   Compiling anyhow v1.0.98
+   Compiling clap_lex v0.7.5
+   Compiling strsim v0.11.1
+   Compiling heck v0.5.0
+   Compiling doc-comment v0.3.3
+   Compiling predicates-core v1.0.9
+   Compiling thiserror v2.0.12
+   Compiling regex v1.11.1
+   Compiling clap_builder v4.5.40
+   Compiling thiserror-impl v2.0.12
+   Compiling clap_derive v4.5.40
+   Compiling float-cmp v0.10.0
+   Compiling difflib v0.4.0
+   Compiling termtree v0.5.1
+   Compiling assert_cmd v2.0.17
+   Compiling normalize-line-endings v0.3.0
+   Compiling predicates v3.1.3
+   Compiling predicates-tree v1.0.12
+   Compiling wait-timeout v0.2.1
+   Compiling clap v4.5.40
+   Compiling bstr v1.12.0
+   Compiling uppercase-converter v0.1.0 (/home/trapapa/uppercase-converter)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 10.74s
+     Running unittests src/lib.rs (target/debug/deps/uppercase_converter-50cd44d8bafb7bf4)
+
+running 3 tests
+test tests::test_empty_input ... ok
+test tests::test_convert_to_uppercase ... ok
+test tests::test_new ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/bin/main.rs (target/debug/deps/main-6bade26868ddcd39)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests uppercase_converter
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
++ '[' -d target/debug/deps ']'
++ llvm-profdata merge -sparse target/debug/profiling/coverage-62049-16035651757222277309_0.profraw target/debug/profiling/coverage-62087-16035651757222277309_0.profraw target/debug/profiling/coverage-62087-18021449055997142762_0.profraw target/debug/profiling/coverage-62088-16035651757222277309_0.profraw target/debug/profiling/coverage-62134-11138397153148664765_0.profraw target/debug/profiling/coverage-62138-18405246797350335115_0.profraw target/debug/profiling/coverage-62139-16035651757222277309_0.profraw -o target/debug/profiling/merged.profdata
+warning: target/debug/profiling/coverage-62049-16035651757222277309_0.profraw: unsupported instrumentation profile format version
+warning: target/debug/profiling/coverage-62134-11138397153148664765_0.profraw: unsupported instrumentation profile format version
+warning: target/debug/profiling/coverage-62087-18021449055997142762_0.profraw: unsupported instrumentation profile format version
+warning: target/debug/profiling/coverage-62139-16035651757222277309_0.profraw: unsupported instrumentation profile format version
+warning: target/debug/profiling/coverage-62087-16035651757222277309_0.profraw: unsupported instrumentation profile format version
+warning: target/debug/profiling/coverage-62138-18405246797350335115_0.profraw: unsupported instrumentation profile format version
+warning: target/debug/profiling/coverage-62088-16035651757222277309_0.profraw: unsupported instrumentation profile format version
+error: no profile can be merged
+++ find target/debug/deps -type f -executable -name 'uppercase_converter-*'
+++ head -n 1
++ TEST_BIN=target/debug/deps/uppercase_converter-e1ff6610803c2a4b
++ '[' -n target/debug/deps/uppercase_converter-e1ff6610803c2a4b ']'
++ llvm-cov show --format=html --ignore-filename-regex=/.cargo/registry --instr-profile=target/debug/profiling/merged.profdata --object target/debug/deps/uppercase_converter-e1ff6610803c2a4b --output-dir=target/debug/profiling/html
+[0;31merror: No such file or directory: Could not read profile data!
+[0m+ llvm-cov report --ignore-filename-regex=/.cargo/registry --instr-profile=target/debug/profiling/merged.profdata --object target/debug/deps/uppercase_converter-e1ff6610803c2a4b
+error: target/debug/deps/uppercase_converter-e1ff6610803c2a4b: Failed to load coverage: No such file or directory
++ echo -e '\033[1;33mProfiling failed but continuing...\033[0m'
+[1;33mProfiling failed but continuing...[0m
++ echo -e '\033[0;32mProject setup complete!\033[0m'
+[0;32mProject setup complete![0m
++ echo 'Project location: /home/trapapa/uppercase-converter'
+Project location: /home/trapapa/uppercase-converter
++ echo 'Coverage report: /home/trapapa/uppercase-converter/target/llvm-cov/html/index.html'
+Coverage report: /home/trapapa/uppercase-converter/target/llvm-cov/html/index.html
++ echo 'Profiling report: /home/trapapa/uppercase-converter/target/debug/profiling/html/index.html'
+Profiling report: /home/trapapa/uppercase-converter/target/debug/profiling/html/index.html
++ echo 'Log file: logs/project_setup_20250611_093944.log'
+Log file: logs/project_setup_20250611_093944.log

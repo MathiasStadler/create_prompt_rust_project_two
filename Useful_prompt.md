@@ -9,6 +9,7 @@
 - Pls make all steps inside ONE script again
 - Where locate the line coverage report
 - In which path find the coverage report
+- Pls make all steps inside ONE script again and add the start instruction as block command
 
 ## Task: Create a Command-Line String Uppercase Converter in Rust
 
