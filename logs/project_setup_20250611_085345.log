@@ -1,0 +1,24 @@
+++ __vsc_preexec_only exec
+++ '[' 1 = 0 ']'
++ RED='\033[0;31m'
+++ __vsc_preexec_only ''
+++ '[' 1 = 0 ']'
++ GREEN='\033[0;32m'
+++ __vsc_preexec_only ''
+++ '[' 1 = 0 ']'
++ YELLOW='\033[1;33m'
+++ __vsc_preexec_only ''
+++ '[' 1 = 0 ']'
++ NC='\033[0m'
+++ __vsc_preexec_only ''
+++ '[' 1 = 0 ']'
++ HOME_DIR=/home/trapapa
+++ __vsc_preexec_only ''
+++ '[' 1 = 0 ']'
++ PROJECT_NAME=uppercase-converter
+++ __vsc_preexec_only ''
+++ '[' 1 = 0 ']'
++ PROJECT_PATH=/home/trapapa/uppercase-converter
+        echo -e "${GREEN}Full coverage achieved# Function: Run tests and generate coverage{NC}"
+    echo -e "${GREEN}Project setup complete# Main execution{NC}"
+[?2004h]633;F> ]633;G
