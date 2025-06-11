@@ -3455,4 +3455,3 @@ cat input.md | grep -v '^---$' | cat -s > output.md
 The `-s` option in `cat` squeezes multiple adjacent empty lines into a single empty line.
 
 ---
-

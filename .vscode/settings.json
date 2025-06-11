@@ -2,8 +2,20 @@
     "cSpell.words": [
         "agsin",
         "clippy",
+        "eprintln",
+        "lcovname",
+        "println",
+        "rustc",
         "Rustdoc",
         "staeps",
         "thiserror"
-    ]
+    ],
+    "cSpell.customDictionaries": {
+        "custom-dictionary-workspace": {
+            "name": "custom-dictionary-workspace",
+            "path": "${workspaceFolder:create_prompt_rust_project_two}/.cspell/custom-dictionary-workspace.txt",
+            "addWords": true,
+            "scope": "workspace"
+        }
+    }
 }
