@@ -5843,6 +5843,7 @@ EOL
     git commit -m "Initial commit"
 }
 
+#HERE
 # Function: Generate profiling data
 generate_profiling() {
     # Set profiling flags
@@ -6658,7 +6659,7 @@ PROJECT_PATH="$HOME_DIR/$PROJECT_NAME"
 # Function: Check system requirements
 check_requirements() {
     echo "Checking system requirements..."
-    
+#NOTE     
     # Check and install required packages
     sudo apt-get update -qq
     sudo apt-get install -y -qq llvm lldb
